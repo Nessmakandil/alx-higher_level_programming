@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for x in range(ord('A'), ord('Z')+1):
-    print("{}".format(chr(x)), end='\n' if chr(x) == 'Z' else '')
+import string
+print(''.join([chr(65+i) for i in range(26)]))
