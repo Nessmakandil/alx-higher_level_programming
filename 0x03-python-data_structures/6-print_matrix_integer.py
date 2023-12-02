@@ -4,6 +4,6 @@ def print_matrix_integer(matrix=[[]]):
     if matrix is None:
         return
     for row in matrix:
-        l = len(row)
+        L = len(row)
         for i, col in enumerate(row):
-            print("{:d}".format(col), end='\n' if i == l - 1 else ' ')
+            print("{:d}".format(col), end='\n' if i == L - 1 else ' ')
