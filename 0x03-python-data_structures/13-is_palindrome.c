@@ -11,10 +11,7 @@ int is_palindrome(listint_t **head)
 	int count = 0, i = 0, j, *num;
 	listint_t *list = *head;
 
-	if (list == NULL)
-	{
-		return (1);
-	}	
+
 	while (list)
 	{
 		count++;
