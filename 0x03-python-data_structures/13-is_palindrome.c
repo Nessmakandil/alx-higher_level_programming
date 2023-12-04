@@ -9,17 +9,9 @@
 int is_palindrome(listint_t **head)
 {
 	int count = 0, i = 0, j, *num;
-	listint_t *list;
+	listint_t *list = *head;
 
-	if (head)
-	{
-		list = *head;
-	}
-	else
-	{
-		return (0);
-	}
-	while (list->next)
+	while (list)
 	{
 		count++;
 		list = list->next;
