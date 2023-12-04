@@ -5,12 +5,11 @@
  * @head: input list
  * Return: 0 or 1
  */
-
 int is_palindrome(listint_t **head)
 {
-	int count = 0, i = 0, j, *num;
+	int count = 0, i = 0, j;
+	int *num;
 	listint_t *list = *head;
-
 
 	while (list)
 	{
@@ -18,6 +17,8 @@ int is_palindrome(listint_t **head)
 		list = list->next;
 	}
 	num = malloc(sizeof(int) * count);
+	if (num == NULL)
+		return (0);
 	list = *head;
 
 	while (i < count)
@@ -28,19 +29,15 @@ int is_palindrome(listint_t **head)
 	}
 
 	j = count - 1;
-	for (i = 0; i < round(count / 2); i++)
+	for (i = 0; i < count / 2; i++)
 	{
-		if (num[i] == num[j])
+		if (num[i] != num[j])
 		{
-			j--;
-		}
-		else
-		{
+			free(num);
 			return (0);
 		}
+		j--;
 	}
 	free(num);
-	free(list);
 	return (1);
 }
-
