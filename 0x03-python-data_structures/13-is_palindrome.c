@@ -26,7 +26,8 @@ int is_palindrome(listint_t **head)
 		list = list->next;
 		i++;
 	}
-
+	
+	free(list);
 	j = count - 1;
 	for (i = 0; i < round(count / 2); i++)
 	{
@@ -41,6 +42,5 @@ int is_palindrome(listint_t **head)
 		}
 	}
 	free(num);
-	free(list);
 	return (1);
 }
