@@ -16,6 +16,10 @@ int is_palindrome(listint_t **head)
 		count++;
 		list = list->next;
 	}
+	if (count % 2 != 0)
+	{
+		return (0);
+	}
 	num = malloc(sizeof(int) * count);
 	list = *head;
 
@@ -27,7 +31,7 @@ int is_palindrome(listint_t **head)
 	}
 
 	j = count - 1;
-	for (i = 0; i < round(count / 2); i++)
+	for (i = 0; i < count / 2; i++)
 	{
 		if (num[i] == num[j])
 		{
