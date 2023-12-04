@@ -9,14 +9,21 @@
 int is_palindrome(listint_t **head)
 {
 	int count = 0, i = 0, j, *num;
-	listint_t *list = *head;
+	listint_t *list;
 
+	if (head)
+	{
+		list = *head;
+	}
+	else
+	{
+		return (0);
+	}
 	while (list->next)
 	{
 		count++;
 		list = list->next;
 	}
-	
 	num = malloc(sizeof(int) * count);
 	list = *head;
 
@@ -39,8 +46,6 @@ int is_palindrome(listint_t **head)
 			return (0);
 		}
 	}
-	free (num);
-	free (list);
 	return (1);
 }
 
