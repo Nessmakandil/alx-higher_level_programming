@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
 def best_score(a_dictionary):
-    if a_dictionary == None:
+    if not a_dictionary:
         return (None)
-    for i in a_dictionary.values():
-        if i == None:
-            return (None)
-    sorted_values = sorted(a_dictionary.values())
-    val = list(a_dictionary.values())
-    keys = list(a_dictionary.keys())
-    idx = val.index(sorted_values[0])
-    return (keys[idx - 1])
+    max_score = float('-inf')
+    best_key = None
+    for key, value in a_dictionary.items():
+        if value > max_score:
+            max_score = value
+            best_key = key
+    return best_key
