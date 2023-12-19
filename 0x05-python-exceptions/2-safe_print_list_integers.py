@@ -6,8 +6,10 @@ def safe_print_list_integers(my_list=[], x=0):
         for i in range(x):
             ll += 1
             if isinstance(my_list[i], int):
-                print("{:d}".format(my_list[i]), end="\n" if ll == x - 1 else "")
+                print("{:d}".format(my_list[i]), end="")
                 count += 1
     except TypeError:
         pass
+    finally:
+        print(end="\n")
     return count
